@@ -18,6 +18,9 @@
                     Название
                 </th>
                 <th>
+                    Подкатегория
+                </th>
+                <th>
                     Действия
                 </th>
             </tr>
@@ -26,10 +29,16 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->code }}</td>
                     <td>{{ $category->name }}</td>
+                    <td>@if($category->category_id)
+                            {{$category->parent->name}}
+                        @else
+                            Нет родительской категории
+                        @endif
+                    </td>
                     <td>
                         <div class="btn-group" role="group">
-                            <form action="{{ route('categories.destroy', $category) }}" method="POST">
-                                <a class="btn btn-success" type="button" href="{{ route('categories.show', $category) }}">Открыть</a>
+                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                                <a class="btn btn-success" type="button" href="{{ route('categories.show', $category->id) }}">Открыть</a>
                                 <a class="btn btn-warning" type="button" href="{{ route('categories.edit', $category) }}">Редактировать</a>
                                 @csrf
                                 @method('DELETE')

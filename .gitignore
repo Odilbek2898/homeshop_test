@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+ngrok.exe
 .env
 .env.backup
 .phpunit.result.cache

@@ -28,7 +28,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('auth.categories.form');
+        $categories = Category::whereNull('category_id')->orderBy('name', 'asc')->get();
+        return view('auth.categories.form', compact('categories'));
     }
 
     /**
@@ -66,9 +67,17 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
+//    public function edit(Request $request, Category $category)
+//    {
+//        $id = $request->id;
+//        $categories = Category::whereNull('category_id')->get();
+//        $category = Category::find($id);
+//        return view('auth.categories.form', compact('category','categories'));
+//    }
     public function edit(Category $category)
     {
-        return view('auth.categories.form', compact('category'));
+        $categories = Category::whereNull('category_id')->orderBy('name', 'asc')->get();
+        return view('auth.categories.form', compact('category', 'categories'));
 
     }
 

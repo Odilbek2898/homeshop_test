@@ -28,6 +28,10 @@
                 <td>{{ $category->name }}</td>
             </tr>
             <tr>
+                <td>Подкетегория</td>
+                <td>{{ $category->category_id }}</td>
+            </tr>
+            <tr>
                 <td>Название en</td>
                 <td>{{ $category->name_en }}</td>
             </tr>

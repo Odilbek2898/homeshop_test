@@ -51,13 +51,24 @@
 
                 <?php
                     use App\Models\Category;
-                    $categories = Category::get();
+                    $categories = Category::whereNull('category_id')->orderBy('name', 'DESC')->get();
                 ?>
 
                 <li @routeactive('categor*')><a href="{{ route('categories') }}">Категории</a>
-                     <ul class="dropdown">
+                     <ul class="dropdown-menu">
                          @foreach($categories as $category)
-                             <li class="li_dropdown"><a href="{{ route('category', $category->code) }}">{{ $category->name }}</a></li>
+
+                             @if ($category->children->count())
+                                <li class="dropdown-submenu"><a class="dropdown-item submenu"  href="{{ route('category', $category->code) }}" data-toggle="collapse">{{ $category->name }}</a>
+                                     <ul class="dropdown-menu">
+                                        @foreach ($category->children as $child)
+                                           <li><a href="{{ route('category', $child->code) }}">{{ $child->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="dropdown-submenu"><a href="{{ route('category', $category->code) }}" data-toggle="collapse">{{ $category->name }}</a></li>
+                            @endif
                          @endforeach
                      </ul>
                 </li>

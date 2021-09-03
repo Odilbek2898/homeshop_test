@@ -27,6 +27,7 @@ class CategoryRequest extends FormRequest
             'code' => 'required|min:3|max:25|unique:categories,code',
             'name' => 'required|min:3|max:25',
             'description' => 'required|min:5',
+//            'category_id' => 'required',
         ];
 
         if ($this->route()->named('categories.update')){

@@ -9,6 +9,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js" defer></script>
+    <link rel="shortcut icon" href="{{ Storage::url('logo.jpg') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">

@@ -10,6 +10,7 @@
                  <div class="ttm_single_image-wrapper text-left">
                  <br>
                      <img class="img-fluid" src="{{ Storage::url($product->image) }}" height="450px" width="500px" alt="{{ $product->name }}" />
+
                  </div>
              </div>
              <div class="col-lg-6 col-md-12 col-xs-12">
