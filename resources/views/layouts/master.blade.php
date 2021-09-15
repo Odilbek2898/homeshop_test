@@ -51,7 +51,7 @@
 
                 <?php
                     use App\Models\Category;
-                    $categories = Category::whereNull('category_id')->orderBy('name', 'DESC')->get();
+                    $categories = Category::whereNull('category_id')->orderBy('name', 'ASC')->get();
                 ?>
 
                 <li @routeactive('categor*')><a href="{{ route('categories') }}">Категории</a>
@@ -87,6 +87,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+
                 @guest()
                     {{-- <li><a href="{{route('login')}}">Войти</a></li> --}}
                 @endguest

@@ -137,7 +137,7 @@
 
                 @foreach ([
                 'hit' => 'Хит',
-                'new' => 'Новинка',
+                'new' => 'x',
                'recommend' => 'Рекомендуемые'
                ] as $field => $title)
                   <div class="form-group row">

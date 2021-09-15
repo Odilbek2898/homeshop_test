@@ -51,12 +51,12 @@ class Basket
         }
         return true;
     }
-    public function saveOrder($name, $phone, $address)
+    public function saveOrder($name, $phone, $address, $address_rayon, $address_dom, $address_kv)
     {
         if (!$this->countAvailable()){
             return false;
         }
-        return $this->order->saveOrder($name, $phone, $address);
+        return $this->order->saveOrder($name, $phone, $address, $address_rayon, $address_dom, $address_kv);
     }
 
     public function getPivotRow($product)

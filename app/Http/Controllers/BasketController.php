@@ -19,7 +19,8 @@ class BasketController extends Controller
 
     public function basketConfirm(Request $request)
     {
-        if((new Basket())->saveOrder($request->name, $request->phone, $request->address)){
+        if((new Basket())->saveOrder($request->name, $request->phone, $request->address,
+            $request->address_rayon, $request->address_dom, $request->address_kv)){
             session()->flash('success', 'Ваш заказ принят в обработку');
         }else{
             session()->flash('warning', 'Товар не доступен в полном объеме для заказа');
@@ -57,7 +58,7 @@ class BasketController extends Controller
     public function basketRemove(Product $product)
     {
         (new Basket())->removeProduct($product);
-        $order = $basket->getOrder();
+//        $order = $basket->getOrder();
 
         session()->flash('warning', 'Удален товар ' . $product->name);
 

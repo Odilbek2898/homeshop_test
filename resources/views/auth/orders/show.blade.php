@@ -10,7 +10,10 @@
                     <h1>Заказ №{{ $order->id }}</h1>
                     <p>Заказчик: <b>{{ $order->name }}</b></p>
                     <p>Телефон номер: <b>{{ $order->phone }}</b></p>
-                    <p>Адрес: <b>{{ $order->address }}</b></p>
+                    <p>Адрес Город: <b>{{ $order->address }}</b></p>
+                    <p>Адрес Район: <b>{{ $order->address_rayon }}</b></p>
+                    <p>Адрес Дом: <b>{{ $order->address_dom }}</b></p>
+                    <p>Адрес Кв: <b>{{ $order->address_kv }}</b></p>
                     <table class="table table-striped">
                         <thead>
                             <tr>

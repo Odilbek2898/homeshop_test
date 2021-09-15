@@ -29,9 +29,27 @@
                         <br>
                         <br>
                         <div class="form-group">
-                            <label for="address" class="control-label col-lg-offset-3 col-lg-2">Адрес: </label>
+                            <label for="address" class="control-label col-lg-offset-3 col-lg-2">Адрес Город: </label>
                             <div class="col-lg-4">
                                 <input type="text" name="address" id="address" value="" class="form-control" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="control-label col-lg-offset-3 col-lg-2">Адрес Район: </label>
+                            <div class="col-lg-4">
+                                <input type="text" name="address_rayon" id="address_rayon" value="" class="form-control" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="control-label col-lg-offset-3 col-lg-2">Адрес Дом: </label>
+                            <div class="col-lg-4">
+                                <input type="text" name="address_dom" id="address_dom" value="" class="form-control" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="control-label col-lg-offset-3 col-lg-2">Адрес Кв: </label>
+                            <div class="col-lg-4">
+                                <input type="text" name="address_kv" id="address_kv" value="" class="form-control">
                             </div>
                         </div>
                     </div>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable=['phone', 'name', 'address', 'status', 'user_id'];
+    protected $fillable=['phone', 'name', 'address', 'address_rayon', 'address_dom', 'address_kv', 'status', 'user_id'];
 
     public function products()
     {
@@ -46,12 +46,15 @@ class Order extends Model
        return session('full_order_sum', 0);
     }
 
-    public function saveOrder($name, $phone, $address)
+    public function saveOrder($name, $phone, $address, $address_rayon, $address_dom, $address_kv)
     {
         if($this->status == 0){
             $this->name = $name;
             $this->phone = $phone;
             $this->address = $address;
+            $this->address_rayon = $address_rayon;
+            $this->address_dom = $address_dom;
+            $this->address_kv = $address_kv;
             $this->status = 1;
             $this->save();
             session()->forget('orderId');
